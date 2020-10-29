@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('de/dcf/binary__exponent_8cpp.html','..
 </div><!--header-->
 <div class="contents">
 
-<p>C++ Program to find Binary Exponent Iteratively and Recursively.  
+<p>C++ Program to find Binary Exponent and Binary Modular Exponent Iteratively and Recursively.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -109,38 +109,44 @@ Include dependency graph for binary_exponent.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aeb48dce0725e63d19147944f41843c73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dcf/binary__exponent_8cpp.html#aeb48dce0725e63d19147944f41843c73">binExpo</a> (int a, int b)</td></tr>
-<tr class="separator:aeb48dce0725e63d19147944f41843c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31dbf5f7ceb9c9eec831ef9f7782291f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dcf/binary__exponent_8cpp.html#a31dbf5f7ceb9c9eec831ef9f7782291f">binExpo_alt</a> (int a, int b)</td></tr>
-<tr class="separator:a31dbf5f7ceb9c9eec831ef9f7782291f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab638a87e8acc691b5488bc85b66f3ea2"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dcf/binary__exponent_8cpp.html#ab638a87e8acc691b5488bc85b66f3ea2">binExpo</a> (uint64_t a, uint64_t b)</td></tr>
+<tr class="separator:ab638a87e8acc691b5488bc85b66f3ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a805c9c31180aaae175b9bb2e55a04402"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dcf/binary__exponent_8cpp.html#a805c9c31180aaae175b9bb2e55a04402">binModExpo</a> (uint64_t a, uint64_t b, uint64_t m)</td></tr>
+<tr class="separator:a805c9c31180aaae175b9bb2e55a04402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37bde0117b8e2cabb7b1d403f5379652"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dcf/binary__exponent_8cpp.html#a37bde0117b8e2cabb7b1d403f5379652">binExpo_alt</a> (uint64_t a, uint64_t b)</td></tr>
+<tr class="separator:a37bde0117b8e2cabb7b1d403f5379652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68f5849a1d56b9d4c8879adb74fd4a0"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dcf/binary__exponent_8cpp.html#ad68f5849a1d56b9d4c8879adb74fd4a0">binModExpo_alt</a> (uint64_t a, uint64_t b, uint64_t m)</td></tr>
+<tr class="separator:ad68f5849a1d56b9d4c8879adb74fd4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dcf/binary__exponent_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function.  <a href="../../de/dcf/binary__exponent_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">More...</a><br /></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>C++ Program to find Binary Exponent Iteratively and Recursively. </p>
-<p>Calculate \(a^b\) in \(O(\log(b))\) by converting \(b\) to a binary number. Binary exponentiation is also known as exponentiation by squaring. </p><dl class="section note"><dt>Note</dt><dd>This is a far better approach compared to naive method which provide \(O(b)\) operations.</dd></dl>
+<div class="textblock"><p>C++ Program to find Binary Exponent and Binary Modular Exponent Iteratively and Recursively. </p>
+<p>Calculate \(a^b\) in \(O(\log(b))\) by converting \(b\) to a binary number. Binary exponentiation is also known as exponentiation by squaring. Calculating binary exponent modular m is known as modular exponentiation. </p><dl class="section note"><dt>Note</dt><dd>This is a far better approach compared to naive method which provide \(O(b)\) operations.</dd></dl>
 <p>Example: 10 in base 2 is 1010. </p><p class="formulaDsp">
 \begin{eqnarray*} 2^{10_d} &amp;=&amp; 2^{1010_b} = 2^8 * 2^2\\ 2^1 &amp;=&amp; 2\\ 2^2 &amp;=&amp; (2^1)^2 = 2^2 = 4\\ 2^4 &amp;=&amp; (2^2)^2 = 4^2 = 16\\ 2^8 &amp;=&amp; (2^4)^2 = 16^2 = 256\\ \end{eqnarray*}
 </p>
-<p> Hence to calculate 2^10 we only need to multiply \(2^8\) and \(2^2\) skipping \(2^1\) and \(2^4\). </p>
+<p> Hence to calculate 2^10 we only need to multiply \(2^8\) and \(2^2\) skipping \(2^1\) and \(2^4\).</p>
+<p>Bitwise Operations Used: a&gt;&gt;1 =&gt; is same as a/2. a&gt;&gt;=1 =&gt; is same as a = a/2. a&amp;1 =&gt; is same as a%2. Checks wether number a is odd or not. Results to 1 i.e. True if a is odd and 0 or False otherwise.</p>
+<p>Modular Properties ( a * a ) % m = ( am * am ) % m Using this property of modular aithmetic we can efficiently calculate (a^b)m. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="aeb48dce0725e63d19147944f41843c73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb48dce0725e63d19147944f41843c73">&#9670;&nbsp;</a></span>binExpo()</h2>
+<a id="ab638a87e8acc691b5488bc85b66f3ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab638a87e8acc691b5488bc85b66f3ea2">&#9670;&nbsp;</a></span>binExpo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int binExpo </td>
+          <td class="memname">uint64_t binExpo </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -151,36 +157,36 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Recursive function to calculate exponent in \(O(\log(n))\) using binary exponent. </p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                          {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (b == 0) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="../../de/dcf/binary__exponent_8cpp.html#aeb48dce0725e63d19147944f41843c73">binExpo</a>(a, b / 2);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (b % 2) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> res * res * a;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> res * res;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                         {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (b == 0) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    uint64_t res = <a class="code" href="../../de/dcf/binary__exponent_8cpp.html#ab638a87e8acc691b5488bc85b66f3ea2">binExpo</a>(a, b&gt;&gt;1); </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (b&amp;1) { <span class="comment">// Same as b%2==1. Result to true if b is odd.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> res * res * a;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> res * res;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a31dbf5f7ceb9c9eec831ef9f7782291f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31dbf5f7ceb9c9eec831ef9f7782291f">&#9670;&nbsp;</a></span>binExpo_alt()</h2>
+<a id="a37bde0117b8e2cabb7b1d403f5379652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37bde0117b8e2cabb7b1d403f5379652">&#9670;&nbsp;</a></span>binExpo_alt()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int binExpo_alt </td>
+          <td class="memname">uint64_t binExpo_alt </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -191,17 +197,116 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Iterative function to calculate exponent in \(O(\log(n))\) using binary exponent. </p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                              {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> res = 1;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">while</span> (b &gt; 0) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> (b % 2) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            res = res * a;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        a = a * a;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        b /= 2;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                             {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    uint64_t res = 1;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">while</span> (b &gt; 0) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (b&amp;2) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            res = res * a;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        a = a * a;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        b &gt;&gt;= 1;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a805c9c31180aaae175b9bb2e55a04402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a805c9c31180aaae175b9bb2e55a04402">&#9670;&nbsp;</a></span>binModExpo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t binModExpo </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Recursive function to calculate exponent modular m (a^b m) in \(O(\log(n))\) using binary exponentiation. </p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (b == 0) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    uint64_t res = <a class="code" href="../../de/dcf/binary__exponent_8cpp.html#ab638a87e8acc691b5488bc85b66f3ea2">binExpo</a>(a, b&gt;&gt;1, m) % m;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (b&amp;1) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> (res * res * a%m ) % m;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> (res * res) % m;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/dcf/binary__exponent_8cpp_a805c9c31180aaae175b9bb2e55a04402_cgraph.svg" width="223" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad68f5849a1d56b9d4c8879adb74fd4a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad68f5849a1d56b9d4c8879adb74fd4a0">&#9670;&nbsp;</a></span>binModExpo_alt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t binModExpo_alt </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Iterative function to calculate exponent modular m (a^b m) in \(O(\log(n))\) using binary exponentiation. </p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                            {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint64_t res = 1;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    a %= m ;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">while</span> (b &gt; 0) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (b&amp;1) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            res = (res * a) % m ;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        a = (a * a) % m;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        b &gt;&gt;= 1 ;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -222,31 +327,28 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Main function. </p>
-<p>Give two numbers a, b</p>
-<p>int resIterate = binExpo_alt(a, b);</p>
-<p>Result of a^b (where '^' denotes exponentiation)</p>
-<p><a class="elRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; resIterate &lt;&lt; <a class="elRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;           {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> a, b;<span class="comment"></span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">    /// Give two numbers a, b</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_istream.html">std::cin</a> &gt;&gt; a &gt;&gt; b;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (a == 0 &amp;&amp; b == 0) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; <span class="stringliteral">&quot;Math error&quot;</span> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b &lt; 0) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; <span class="stringliteral">&quot;Exponent must be positive !!&quot;</span> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">int</span> resRecurse = <a class="code" href="../../de/dcf/binary__exponent_8cpp.html#aeb48dce0725e63d19147944f41843c73">binExpo</a>(a, b);<span class="comment"></span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">        /// int resIterate = binExpo_alt(a, b);</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span><span class="comment"></span> </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">        /// Result of a^b (where &#39;^&#39; denotes exponentiation)</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span>        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; resRecurse &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;<span class="comment"></span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">        /// std::cout &lt;&lt; resIterate &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span>    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<p>Give three numbers a, b, m.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;           {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    uint64_t a, b, m;<span class="comment"></span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">    /// Give three numbers a, b, m.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"></span>    a = 1234, b = 12345, m = 1000000007;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (a == 0 &amp;&amp; b == 0) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; <span class="stringliteral">&quot;Math error&quot;</span> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b &lt; 0) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; <span class="stringliteral">&quot;Exponent must be positive !!&quot;</span> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( m == 0 ) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; <span class="stringliteral">&quot;m cannot be zero.&quot;</span> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; <span class="stringliteral">&quot;Result of a^b Recursive : &quot;</span>   &lt;&lt; <a class="code" href="../../de/dcf/binary__exponent_8cpp.html#ab638a87e8acc691b5488bc85b66f3ea2">binExpo</a>(a,b)          &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; <span class="stringliteral">&quot;Result of a^b%m Recursive : &quot;</span> &lt;&lt; <a class="code" href="../../de/dcf/binary__exponent_8cpp.html#a805c9c31180aaae175b9bb2e55a04402">binModExpo</a>(a,b,m)     &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; <span class="stringliteral">&quot;Result of a^b Iterative : &quot;</span>   &lt;&lt; <a class="code" href="../../de/dcf/binary__exponent_8cpp.html#a37bde0117b8e2cabb7b1d403f5379652">binExpo_alt</a>(a,b)      &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a> &lt;&lt; <span class="stringliteral">&quot;Result of a^b%m Iterative : &quot;</span> &lt;&lt; <a class="code" href="../../de/dcf/binary__exponent_8cpp.html#ad68f5849a1d56b9d4c8879adb74fd4a0">binModExpo_alt</a>(a,b,m) &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/dcf/binary__exponent_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.svg" width="182" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/dcf/binary__exponent_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.svg" width="342" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -254,10 +356,12 @@ Here is the call graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="abinary__exponent_8cpp_html_aeb48dce0725e63d19147944f41843c73"><div class="ttname"><a href="../../de/dcf/binary__exponent_8cpp.html#aeb48dce0725e63d19147944f41843c73">binExpo</a></div><div class="ttdeci">int binExpo(int a, int b)</div><div class="ttdef"><b>Definition:</b> binary_exponent.cpp:28</div></div>
+<div class="ttc" id="abinary__exponent_8cpp_html_a37bde0117b8e2cabb7b1d403f5379652"><div class="ttname"><a href="../../de/dcf/binary__exponent_8cpp.html#a37bde0117b8e2cabb7b1d403f5379652">binExpo_alt</a></div><div class="ttdeci">uint64_t binExpo_alt(uint64_t a, uint64_t b)</div><div class="ttdef"><b>Definition:</b> binary_exponent.cpp:65</div></div>
+<div class="ttc" id="abinary__exponent_8cpp_html_a805c9c31180aaae175b9bb2e55a04402"><div class="ttname"><a href="../../de/dcf/binary__exponent_8cpp.html#a805c9c31180aaae175b9bb2e55a04402">binModExpo</a></div><div class="ttdeci">uint64_t binModExpo(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> binary_exponent.cpp:51</div></div>
 <div class="ttc" id="abasic_ostream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cout</a></div></div>
+<div class="ttc" id="abinary__exponent_8cpp_html_ad68f5849a1d56b9d4c8879adb74fd4a0"><div class="ttname"><a href="../../de/dcf/binary__exponent_8cpp.html#ad68f5849a1d56b9d4c8879adb74fd4a0">binModExpo_alt</a></div><div class="ttdeci">uint64_t binModExpo_alt(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> binary_exponent.cpp:80</div></div>
+<div class="ttc" id="abinary__exponent_8cpp_html_ab638a87e8acc691b5488bc85b66f3ea2"><div class="ttname"><a href="../../de/dcf/binary__exponent_8cpp.html#ab638a87e8acc691b5488bc85b66f3ea2">binExpo</a></div><div class="ttdeci">uint64_t binExpo(uint64_t a, uint64_t b)</div><div class="ttdef"><b>Definition:</b> binary_exponent.cpp:37</div></div>
 <div class="ttc" id="aendl_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a></div><div class="ttdeci">T endl(T... args)</div></div>
-<div class="ttc" id="abasic_istream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_istream.html">std::cin</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
